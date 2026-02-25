@@ -2,10 +2,24 @@ import { ApplicationConfig, provideBrowserGlobalErrorListeners } from '@angular/
 import { provideRouter } from '@angular/router';
 
 import { routes } from './app.routes';
+import { providePrimeNG } from 'primeng/config';
+import Aura from '@primeng/themes/aura';
+import { definePreset } from '@primeng/themes';
 
-export const appConfig: ApplicationConfig = {
+const MyPreset = definePreset(Aura, {
+  semantic: {
+    primary: {
+      500: '#141516'
+    }
+  }
+});
+
+export const appConfig = {
   providers: [
-    provideBrowserGlobalErrorListeners(),
-    provideRouter(routes)
+    providePrimeNG({
+      theme: {
+        preset: MyPreset
+      }
+    })
   ]
 };

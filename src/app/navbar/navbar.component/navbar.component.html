@@ -1,0 +1,50 @@
+<p-menubar [model]="items" class="shadow-2">
+
+    <!-- Left Logo -->
+    <ng-template pTemplate="start">
+        <div class="flex align-items-center gap-2">
+            <i class="pi pi-check-square text-primary text-xl"></i>
+            <span class="font-semibold text-lg">TaskFlow</span>
+        </div>
+    </ng-template>
+
+    <!-- Right Section -->
+    <ng-template pTemplate="end">
+        <div class="flex align-items-center gap-3">
+
+            <!-- Search -->
+            <span class="p-input-icon-left">
+                <i class="pi pi-search"></i>
+                <input 
+                    type="text"
+                    pInputText 
+                    placeholder="Search tasks..." 
+                    class="w-12rem" />
+            </span>
+
+            <!-- Add Task Button -->
+            <p-button 
+                icon="pi pi-plus"
+                label="New Task"
+                size="small">
+            </p-button>
+
+            <!-- Notifications -->
+            <p-button 
+                icon="pi pi-bell"
+                severity="secondary"
+                [text]="true"
+                pBadge 
+                value="notifications">
+            </p-button>
+
+            <!-- User Avatar -->
+            <p-avatar 
+                image="https://primefaces.org/cdn/primeng/images/demo/avatar/amyelsner.png"
+                shape="circle">
+            </p-avatar>
+
+        </div>
+    </ng-template>
+
+</p-menubar>
